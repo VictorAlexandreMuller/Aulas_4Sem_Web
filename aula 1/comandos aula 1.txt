@@ -1,0 +1,15 @@
+npm init --y
+cria o package.json
+
+npm i --save express
+cria a pasta node_modules com as bibliotecas
+
+node index.js
+faz rodar o projeto (não está funcionando)
+
+npm i --save-dev nodemon
+salva o projeto (?)
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+libera a segurança do PC pra ele confiar que você é um dev e poder utilizar os comandos
+
