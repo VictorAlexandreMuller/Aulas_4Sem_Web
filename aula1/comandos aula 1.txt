@@ -1,3 +1,6 @@
+npm install
+instala tudo e também serve para revisar o que estiver faltando
+
 npm init --y
 cria o package.json
 
