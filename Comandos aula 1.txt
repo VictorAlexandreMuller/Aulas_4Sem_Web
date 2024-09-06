@@ -1,17 +1,22 @@
-npm install
-instala tudo e também serve para revisar o que estiver faltando
+** npm i express // npm i --save express
+Instala o "node_modules" e também revisa o que estiver faltando
 
-npm init --y
-cria o package.json
+---------------------------------------------------------------------
+npm i: Instala todas as dependências listadas no package.json.
+npm i express: Instala o express e, em versões modernas do npm, automaticamente adiciona essa dependência ao package.json.
+npm i --save express: Fazia o mesmo que npm i express nas versões anteriores ao npm@5, mas agora o --save é desnecessário, pois o comportamento de adicionar ao package.json é padrão.
+---------------------------------------------------------------------
 
-npm i --save express
-cria a pasta node_modules com as bibliotecas
+** npm init --y
+Cria o package.json
 
-node index.js
-faz rodar o projeto (não está funcionando)
+* node nomeDoProjeto.js
+Faz rodar o projeto
 
 npm i --save-dev nodemon
-salva o projeto (?)
+só funciona para a versão 18 ou mais do nvm
+Instala o nodemon localmente como uma dependência de desenvolvimento.
+O Nodemon é uma biblioteca open source muito popular entre os desenvolvedores Node. js
 
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 libera a segurança do PC pra ele confiar que você é um dev e poder utilizar os comandos

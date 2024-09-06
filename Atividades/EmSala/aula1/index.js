@@ -22,7 +22,7 @@ app.all("/exemploAll", (req, res) => {
 });
 
 // usando middleware
-const lista01 = require("../Atividades/lista01");
+const lista01 = require("./listaExemplo01");
 
 app.get("/ola", (req, res) => {
   res.send(lista01.ola());
