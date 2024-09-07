@@ -21,3 +21,22 @@ O Nodemon é uma biblioteca open source muito popular entre os desenvolvedores N
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 libera a segurança do PC pra ele confiar que você é um dev e poder utilizar os comandos
 
+npm i --save body-parser
+baixa a biblioteca "body-parser" que interpreta json
+
+npm i --save pm2
+baixa a biblioteca "pm2" que cria e roda um servidor
+
+npm run produttion
+UTILIZAR APENAS SE TIVER COLOCADO O SCRIPT "PRODUCTION" NO "PACKAGE.JSON"
+ex:
+"production": "pm2 start index.js --name nomeDoServidor"
+
+npm i -g pm2
+instala o visual para o servidor
+
+pm2 monit
+abre o monitoramento
+
+pm2 kill
+exclui o servidor

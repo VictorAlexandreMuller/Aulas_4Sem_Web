@@ -3,6 +3,8 @@ const app = express();
 
 // requisições usando o use possuem regras de hierarquia
 // o "all" funciona como o "use", ele funciona como get, post, etc...
+
+// req = request e res = response = solicitar e responder
 app.use("/alunos", (req, res, next) => {
   //res.send("agora eu mudei o caminho");
   console.log("Calma pessoal...");
