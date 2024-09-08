@@ -27,7 +27,7 @@ baixa a biblioteca "body-parser" que interpreta json
 npm i --save pm2
 baixa a biblioteca "pm2" que cria e roda um servidor
 
-npm run produttion
+npm run production
 UTILIZAR APENAS SE TIVER COLOCADO O SCRIPT "PRODUCTION" NO "PACKAGE.JSON"
 ex:
 "production": "pm2 start index.js --name nomeDoServidor"
