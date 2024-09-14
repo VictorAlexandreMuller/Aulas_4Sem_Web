@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste FullStack</title>
+  </head>
+  <body onload="getClientes()">
+    <ul></ul>
+  </body>
+  <script>
+    function getClientes() {
+      fetch("http://localhost:2900/clientes")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          const ul = document.querySelector("ul");
+          data.forEach((cliente) => {
+            const li = document.createElement("li");
+            li.textContent = cliente.nome;
+            ul.appendChild(li);
+          });
+        });
+    }
+  </script>
+</html>

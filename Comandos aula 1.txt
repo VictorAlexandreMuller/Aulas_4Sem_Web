@@ -40,3 +40,7 @@ abre o monitoramento
 
 pm2 kill
 exclui o servidor
+
+npm i --save mysql2
+
+npm i --save cors
