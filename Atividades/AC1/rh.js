@@ -59,7 +59,6 @@ async function getSetor(req, res) {
     "SELECT * FROM setor WHERE nome = ?",
     [nome]
   );
-  // console.log(setorEspecifico[0]);
   res.json(setorEspecifico[0]);
 }
 
@@ -86,7 +85,6 @@ async function getFuncionariosDoCargo(req, res) {
     "select * from funcionario where cod_cargo = ?",
     [cod_cargo]
   );
-  // console.log(funcionariosDoCargo[0]);
   res.json(funcionariosDoCargo);
 }
 
@@ -94,7 +92,6 @@ async function getFuncionariosDoCargo(req, res) {
 
 async function getCargosSemFuncionarios(req, res) {
   const conn = await connect();
-  // let cod_cargo = req.params.cod_cargo;
   const funcionariosDoCargo = await conn.query(
     "SELECT cargo.nome, cargo.salario FROM cargo LEFT JOIN funcionario ON cargo.cod_cargo = funcionario.cod_cargo WHERE funcionario.cod_funcionario IS NULL;"
   );
@@ -107,21 +104,22 @@ async function getCargosSemFuncionarios(req, res) {
 // a.	Funcionário
 
 async function insertFuncionario(req, res) {
+  console.log(req.body);
   const conn = await connect();
-  const { cod_funcionario, nome, data_admissao, cod_cargo, cod_setor } =
-    req.body;
+  const { nome, data_admissao, cod_cargo, cod_setor } = req.body;
   const result = await conn.query(
-    "INSERT INTO funcionario (cod_funcionario, nome, data_admissao, cod_cargo, cod_setor) VALUES (?, ?, ?, ?, ?)",
-    [cod_funcionario, nome, data_admissao, cod_cargo, cod_setor]
+    "INSERT INTO funcionario (nome, data_admissao, cod_cargo, cod_setor) VALUES (?, ?, ?, ?)",
+    [nome, data_admissao, cod_cargo, cod_setor]
   );
   console.log(result);
-  res.send(result);
+  res.json(result);
 }
 
 //////////////////////////////////////////////////////////////////////
 // 4.	Crie uma requisição Put para atualizar Funcionário.
 
 async function updateFuncionario(req, res) {
+  console.log(req.params.cod_funcionario);
   const conn = await connect();
   let cod_funcionario = req.params.cod_funcionario;
   const { nome, data_admissao, cod_cargo, cod_setor } = req.body;
@@ -131,7 +129,7 @@ async function updateFuncionario(req, res) {
     [nome, data_admissao, cod_cargo, cod_setor, cod_funcionario]
   );
   console.log(result);
-  res.send(result);
+  res.json(result);
 }
 
 //////////////////////////////////////////////////////////////////////
