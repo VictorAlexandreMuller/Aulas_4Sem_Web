@@ -54,23 +54,23 @@ async function getTodosOsFuncionarios(req, res) {
 
 async function getSetor(req, res) {
   const conn = await connect();
-  let cod_setor = req.query.cod_setor;
-  const setorEspecifico = await conn.query(
-    "SELECT * FROM setor WHERE cod_setor = ?",
-    cod_setor
+  let { nome } = req.query;
+  const [setorEspecifico] = await conn.query(
+    "SELECT * FROM setor WHERE nome = ?",
+    [nome]
   );
-  console.log(setorEspecifico[0]);
-  res.send(setorEspecifico[0]);
+  // console.log(setorEspecifico[0]);
+  res.json(setorEspecifico[0]);
 }
 
 // e.	Funcionário com o parâmetro nome passado por :id;
 
 async function getFuncionario(req, res) {
   const conn = await connect();
-  let cod_funcionario = req.params.cod_funcionario;
+  let nome = req.params.nome;
   const funcionarioEspecifico = await conn.query(
-    "SELECT * FROM funcionario WHERE cod_funcionario = ?",
-    cod_funcionario
+    "SELECT * FROM funcionario WHERE nome = ?",
+    nome
   );
   console.log(funcionarioEspecifico[0]);
   res.send(funcionarioEspecifico[0]);
@@ -80,23 +80,23 @@ async function getFuncionario(req, res) {
 
 async function getFuncionariosDoCargo(req, res) {
   const conn = await connect();
-  let cod_cargo = req.body.cod_cargo;
-  const funcionariosDoCargo = await conn.query(
-    "SELECT * FROM funcionario WHERE cod_cargo = ?",
-    cod_cargo
+  let { cod_cargo } = req.body;
+
+  const [funcionariosDoCargo] = await conn.query(
+    "select * from funcionario where cod_cargo = ?",
+    [cod_cargo]
   );
-  console.log(funcionariosDoCargo[0]);
-  res.send(funcionariosDoCargo[0]);
+  // console.log(funcionariosDoCargo[0]);
+  res.json(funcionariosDoCargo);
 }
 
 // g.	Todos os cargos que não possuem funcionário
 
 async function getCargosSemFuncionarios(req, res) {
   const conn = await connect();
-  let cod_cargo = req.params.cod_cargo;
+  // let cod_cargo = req.params.cod_cargo;
   const funcionariosDoCargo = await conn.query(
-    "SELECT cargo.nome, cargo.salario FROM cargo LEFT JOIN funcionario ON cargo.cod_cargo = funcionario.cod_cargo WHERE funcionario.cod_funcionario IS NULL;",
-    cod_cargo
+    "SELECT cargo.nome, cargo.salario FROM cargo LEFT JOIN funcionario ON cargo.cod_cargo = funcionario.cod_cargo WHERE funcionario.cod_funcionario IS NULL;"
   );
   console.log(funcionariosDoCargo[0]);
   res.send(funcionariosDoCargo[0]);
@@ -157,4 +157,8 @@ module.exports = {
   getTodosOsFuncionarios,
   getTodosOsSetores,
   getTodosOsCargos,
+
+  excluirFuncionario,
+  updateFuncionario,
+  insertFuncionario,
 };
