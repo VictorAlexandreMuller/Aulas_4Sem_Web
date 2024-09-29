@@ -1,0 +1,39 @@
+-----------------------------------------------------------------------
+Instala globalmente:
+
+Npm i typescript –g
+
+-----------------------------------------------------------------------
+Para verificar:
+
+tsc -v
+
+-----------------------------------------------------------------------
+Crie os seguintes arquivos/pasta no projeto:
+
+PastaDoProjeto
+>Src (Pasta)
+>>Index.ts
+>Dist (Pasta)
+>>Index.html
+
+-----------------------------------------------------------------------
+Adicione isso abaixo do "title" no html (o html é só criar com !):
+
+<script src="js/index.js"></script>
+
+-----------------------------------------------------------------------
+Para criar o arquivo "tsconfig.json":
+
+tsc –init
+
+-----------------------------------------------------------------------
+No arquivo "tsconfig.json" altere e descomente:
+
+“rootDir”: “./src”
+“outDir: “./dist/js”
+
+-----------------------------------------------------------------------
+Rode o comando abaixo dentro da pasta onde está o "tsconfig.json" para compilar em JS:
+
+tsc –w
