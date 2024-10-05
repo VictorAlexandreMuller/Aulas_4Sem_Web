@@ -7,15 +7,24 @@
   <div class="col-4">
     <div id="list-example" class="list-group">
       <a
-        routerLink="."
+        routerLink="filho1"
         class="list-group-item list-group-item-action"
         [ngbScrollSpyItem]="spy"
         fragment="items"
       >
-        5 - routerLink example
+        1 - Filho 1
+      </a>
+      <a
+        routerLink="filho2"
+        class="list-group-item list-group-item-action"
+        [ngbScrollSpyItem]="spy"
+        fragment="items"
+      >
+        2 - Filho 2
       </a>
     </div>
   </div>
+
   <div class="col-8">
     <div
       ngbScrollSpy
@@ -24,16 +33,7 @@
       class="bg-light p-3 rounded-2 mb-3"
       style="height: 200px"
     >
-      <h4 ngbScrollSpyFragment="items-1">First heading</h4>
-      <p>
-        Raw denim you probably haven't heard of them jean shorts Austin.
-        Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache
-        cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
-        butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui
-        irure terry richardson ex squid. Aliquip placeat salvia cillum iphone.
-        Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
-        qui.
-      </p>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
