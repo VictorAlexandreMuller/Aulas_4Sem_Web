@@ -1,0 +1,57 @@
+ng version
+-Mostra a versao do angular
+
+npm install -g @angular/cli@17.3
+-Baixa o angular na versao especificada
+
+https://angular.dev/reference/versions
+-Versoes compativeis Angular + Node + CLI
+
+----------------------------------------------------------------------
+
+ng new nomeDoProjeto --no-standalone
+-Cria o projeto angular com o NO STANDALONE
+
+ng serve
+-Abre o LiveServer do Angular - deve estar dentro da pasta do projeto
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+Alguns arquivos:
+
+tsconfig.json - Por padrão configura o TypeScript
+tsconfig.app.json
+tsconfig.spec.json
+
+package.json - Mostra tudo que está instalado no projeto e que deve ser utilizado
+
+angular.json - São arquivos de configuração do projeto Angular
+
+app.module - São as configurações do módulo app
+app.component - rege o componente app.html co o estilo app.scss
+
+----------------------------------------------------------------------
+
+-Dentro da pasta que voce quer criar o novo componente você usa:
+
+ng generate component primeiroComponente
+ou
+ng g c primeiroComponente
+
+----------------------------------------------------------------------
+
+npm i bootstrap
+-Baixa o bootstrap
+
+ng add @ng-bootstrap/ng-bootstrap
+-Baixa o ng-bootstrap
+
+https://ng-bootstrap.github.io/#/components/accordion/overview
+
+----------------------------------------------------------------------
+
+npm i
+
