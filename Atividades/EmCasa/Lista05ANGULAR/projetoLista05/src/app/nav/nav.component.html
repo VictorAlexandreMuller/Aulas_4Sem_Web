@@ -1,0 +1,14 @@
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+  <li [ngbNavItem]="1" routerLink="login">
+    <button ngbNavLink>Login</button>
+    <ng-template ngbNavContent> </ng-template>
+  </li>
+  <li [ngbNavItem]="2" routerLink="principal">
+    <button ngbNavLink>Menu Lateral</button>
+    <ng-template ngbNavContent> </ng-template>
+  </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+<pre>Active: {{ active }}</pre>
