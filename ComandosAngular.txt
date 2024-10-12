@@ -55,3 +55,8 @@ https://ng-bootstrap.github.io/#/components/accordion/overview
 
 npm i
 
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+Para criar um novo módulo
+ng g m 
