@@ -58,5 +58,38 @@ npm i
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 
-Para criar um novo módulo
-ng g m 
+Comando para criar um módulo
+ng g m <<nomeModulo>>
+
+Todo componente criado aponta para o módulo mais próximo,
+para definir em qual módulo o componente deve ser criado usa-se o comando:
+ng g c <<nomeComponente>> --module <<nomeMódulo>>
+
+
+Para criar um novo módulo com rounting:
+ng g m <<nomeModulo>> --routing
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+Partes de um módulo
+
+-declarations:
+Aqui são declarados os componentes, diretivas e pipes que pertencem a esse módulo. Esses artefatos são visíveis e utilizáveis apenas dentro do módulo em que foram declarados, a menos que sejam exportados.
+
+-imports:
+Lista os módulos que são necessários para o funcionamento do módulo atual. Por exemplo, o BrowserModule é necessário para qualquer aplicação Angular rodando em um navegador, e o CommonModule é geralmente usado para diretivas e pipes básicos como ngIf e ngFor.
+
+-providers:
+Aqui são registrados os serviços que podem ser injetados nos componentes do módulo. Eles podem ser definidos aqui ou diretamente nos serviços (usando providedIn: 'root').
+
+-bootstrap:
+Esse campo é específico do módulo raiz e indica qual componente deve ser carregado inicialmente ao iniciar a aplicação (geralmente o AppComponent).
+
+-exports:
+Se você quiser que alguns componentes, diretivas ou pipes do módulo estejam disponíveis para uso em outros módulos, você precisa exportá-los aqui.
+
+
+
+
